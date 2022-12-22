@@ -12,8 +12,30 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  String pesan = "ini adalah text";
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Anonimus Method"),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(pesan),
+              ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      pesan = "ketika tombol di tekan ";
+                    });
+                  },
+                  child: const Text("Tekan Saya"))
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
